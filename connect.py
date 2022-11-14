@@ -1,5 +1,3 @@
-#create gameboard
-board = [[0 for i in range(7)] for x in range(7)]
 
 
 def checkRow(row: int):

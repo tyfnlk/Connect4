@@ -1,6 +1,8 @@
+#import game class
 import Game
-
+#create instance of Game from Game class
 game = Game.Game()
+#set player
 player =1
 
 while(game.isOver() == False ):

@@ -10,7 +10,8 @@ while(game.isOver() == False ):
         print("player", player, "'s turn.")
         move = int(input("enter move: "))
         if(game.place(move, player)):
-            game.isOver()
+            if game.isOver():
+                print("player", player, "wins!")
             game.displayBoard()
             player =2
         else:
@@ -20,7 +21,8 @@ while(game.isOver() == False ):
         print("player", player, "'s turn.")
         move = int(input("enter move: "))
         if(game.place(move, player)):
-            game.isOver()
+            if game.isOver():
+                print("player", player, "wins!")
             game.displayBoard()
             player =1
         else:

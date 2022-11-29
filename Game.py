@@ -10,8 +10,9 @@ class Game:
         for i in reversed(range(7)):
             if self.board[i][row] == 0:
                 self.board[i][row] = player
-                return True
-        return False
+                return i
+        return -1
+
 
     def clear(self, row: int):
         #iterate through each row

@@ -1,13 +1,13 @@
 class Game:
     def __init__(self):
         # create gameboard
-        self.board = [[0 for i in range(7)] for x in range(7)]
+        self.board = [[0 for i in range(7)] for x in range(6)]
 
     def setBoard(self, board: list):
         self.board = board
 
     def place(self, row: int, player: int):
-        for i in reversed(range(7)):
+        for i in reversed(range(6)):
             if self.board[i][row] == 0:
                 self.board[i][row] = player
                 return i
@@ -16,7 +16,7 @@ class Game:
 
     def clear(self, row: int):
         #iterate through each row
-        for i in (range(7)):
+        for i in (range(6)):
             if self.board[i][row] != 0:
                 self.board[i][row] = 0
                 return True
@@ -31,7 +31,7 @@ class Game:
     # checks if game is over
     def isOver(self):
         # check for win condition
-        for i in range(7):
+        for i in range(6):
             for j in range(7):
                 if (self.board[i][j] == 1 or self.board[i][j] == 2):
                     temp = self.board[i][j]
@@ -48,7 +48,7 @@ class Game:
                             count = 0
 
                     # check below
-                    if (i + 3 < 7):
+                    if (i + 3 < 6):
                         for h in range(4):
                             if self.board[i + h][j] == temp:
                                 count += 1
@@ -59,7 +59,7 @@ class Game:
                             count = 0
 
                     # check down right
-                    if (i + 3 < 7 and j + 3 < 7):
+                    if (i + 3 < 6 and j + 3 < 7):
                         for h in range(4):
                             if self.board[i + h][j + h] == temp:
                                 count += 1
@@ -70,7 +70,7 @@ class Game:
                             count = 0
 
                     # check down left
-                    if (i + 3 < 7 and j - 3 > -1):
+                    if (i + 3 < 6 and j - 3 > -1):
                         for h in range(4):
                             if self.board[i + h][j - h] == temp:
                                 count += 1
@@ -92,7 +92,7 @@ class Game:
         print("--------------------")
         print("0  1  2  3  4  5  6")
         print("--------------------")
-        for i in range(7):
+        for i in range(6):
             for j in range(7):
                 print(self.board[i][j], end="  ")
             print('')
